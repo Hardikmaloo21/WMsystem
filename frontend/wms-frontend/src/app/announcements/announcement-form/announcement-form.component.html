@@ -1,0 +1,42 @@
+<h2>
+  {{isEdit ? 'Edit' : 'Create'}}
+  Announcement
+</h2>
+
+<form
+  [formGroup]="form"
+  (ngSubmit)="save()">
+
+  <div>
+
+    <label>Title</label>
+
+    <input
+      type="text"
+      formControlName="title">
+
+  </div>
+
+  <br>
+
+  <div>
+
+    <label>Message</label>
+
+    <br>
+
+    <textarea
+      rows="5"
+      cols="50"
+      formControlName="message">
+    </textarea>
+
+  </div>
+
+  <br>
+
+  <button type="submit">
+    Save
+  </button>
+
+</form>

@@ -1,0 +1,1131 @@
+2026-06-12 11:24:49.915 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-06-12 11:24:50.263 +05:30 [INF] WMS Request: LoginCommand {"Username":"admin","Password":"Admin@123","$type":"LoginCommand"}
+2026-06-12 11:24:52.722 +05:30 [WRN] WMS Long Running Request: LoginCommand (2404ms) {"Username":"admin","Password":"Admin@123","$type":"LoginCommand"}
+2026-06-12 11:24:52.736 +05:30 [INF] WMS Response: LoginCommand {"AccessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZW1wbG95ZWVJZCI6IiIsImp0aSI6ImNkOGRiNjgwLTgwNGItNGIzZi04MjQxLTgxMTI5NGI2MTRlZSIsImV4cCI6MTc4MTI0NzI5MiwiaXNzIjoiV01TLkFQSSIsImF1ZCI6IldNUy5DbGllbnQifQ.LAe2qxc1H1mvfE9fPqy_9RZWKfMMdRR9xfuGM2YLHyQ","RefreshToken":"y49xY+ku+OOfqCJ8FACqfkqQ/e0Bg1k2bMm1Nz77vhE6OcE3TdP+YJKNxKpXsdB6nMzZXiqZWuWL1bMl+LqWhA==","ExpiresAt":"2026-06-12T06:54:52.7212893Z","Username":"admin","Role":"Admin","EmployeeId":null,"$type":"LoginResponse"}
+2026-06-12 11:24:52.830 +05:30 [INF] HTTP POST /api/v1/Auth/login responded 200 in 2785.6870 ms
+2026-06-12 11:25:34.717 +05:30 [INF] WMS Request: GetEmployeeByIdQuery {"EmployeeId":1,"$type":"GetEmployeeByIdQuery"}
+2026-06-12 11:25:34.732 +05:30 [ERR] HTTP GET /api/v1/Employees/1 responded 500 in 126.8185 ms
+System.InvalidOperationException: No service for type 'MediatR.IRequestHandler`2[WMS.Application.Features.Employees.Queries.GetEmployeeByIdQuery,WMS.Application.Features.Employees.DTOs.EmployeeDto]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.EmployeesController.GetById(Int32 id, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\EmployeesController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-12 11:25:34.850 +05:30 [ERR] An unhandled exception occurred: No service for type 'MediatR.IRequestHandler`2[WMS.Application.Features.Employees.Queries.GetEmployeeByIdQuery,WMS.Application.Features.Employees.DTOs.EmployeeDto]' has been registered.
+System.InvalidOperationException: No service for type 'MediatR.IRequestHandler`2[WMS.Application.Features.Employees.Queries.GetEmployeeByIdQuery,WMS.Application.Features.Employees.DTOs.EmployeeDto]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.EmployeesController.GetById(Int32 id, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\EmployeesController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at WMS.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Middleware\GlobalExceptionMiddleware.cs:line 26
+2026-06-12 11:29:34.162 +05:30 [INF] WMS Request: GetEmployeeByIdQuery {"EmployeeId":1,"$type":"GetEmployeeByIdQuery"}
+2026-06-12 11:29:34.304 +05:30 [ERR] HTTP GET /api/v1/Employees/1 responded 500 in 310.0786 ms
+System.InvalidOperationException: No service for type 'MediatR.IRequestHandler`2[WMS.Application.Features.Employees.Queries.GetEmployeeByIdQuery,WMS.Application.Features.Employees.DTOs.EmployeeDto]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.EmployeesController.GetById(Int32 id, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\EmployeesController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-12 11:29:34.383 +05:30 [ERR] An unhandled exception occurred: No service for type 'MediatR.IRequestHandler`2[WMS.Application.Features.Employees.Queries.GetEmployeeByIdQuery,WMS.Application.Features.Employees.DTOs.EmployeeDto]' has been registered.
+System.InvalidOperationException: No service for type 'MediatR.IRequestHandler`2[WMS.Application.Features.Employees.Queries.GetEmployeeByIdQuery,WMS.Application.Features.Employees.DTOs.EmployeeDto]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.EmployeesController.GetById(Int32 id, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\EmployeesController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at WMS.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Middleware\GlobalExceptionMiddleware.cs:line 26
+2026-06-12 11:30:04.970 +05:30 [INF] WMS Request: GetEmployeeByIdQuery {"EmployeeId":0,"$type":"GetEmployeeByIdQuery"}
+2026-06-12 11:30:04.982 +05:30 [ERR] HTTP GET /api/v1/Employees/0 responded 500 in 36.5923 ms
+System.InvalidOperationException: No service for type 'MediatR.IRequestHandler`2[WMS.Application.Features.Employees.Queries.GetEmployeeByIdQuery,WMS.Application.Features.Employees.DTOs.EmployeeDto]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.EmployeesController.GetById(Int32 id, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\EmployeesController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-12 11:30:05.036 +05:30 [ERR] An unhandled exception occurred: No service for type 'MediatR.IRequestHandler`2[WMS.Application.Features.Employees.Queries.GetEmployeeByIdQuery,WMS.Application.Features.Employees.DTOs.EmployeeDto]' has been registered.
+System.InvalidOperationException: No service for type 'MediatR.IRequestHandler`2[WMS.Application.Features.Employees.Queries.GetEmployeeByIdQuery,WMS.Application.Features.Employees.DTOs.EmployeeDto]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.EmployeesController.GetById(Int32 id, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\EmployeesController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at WMS.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Middleware\GlobalExceptionMiddleware.cs:line 26
+2026-06-12 11:30:11.401 +05:30 [INF] WMS Request: GetEmployeeByIdQuery {"EmployeeId":1,"$type":"GetEmployeeByIdQuery"}
+2026-06-12 11:30:11.493 +05:30 [ERR] HTTP GET /api/v1/Employees/1 responded 500 in 94.8763 ms
+System.InvalidOperationException: No service for type 'MediatR.IRequestHandler`2[WMS.Application.Features.Employees.Queries.GetEmployeeByIdQuery,WMS.Application.Features.Employees.DTOs.EmployeeDto]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.EmployeesController.GetById(Int32 id, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\EmployeesController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-12 11:30:11.519 +05:30 [ERR] An unhandled exception occurred: No service for type 'MediatR.IRequestHandler`2[WMS.Application.Features.Employees.Queries.GetEmployeeByIdQuery,WMS.Application.Features.Employees.DTOs.EmployeeDto]' has been registered.
+System.InvalidOperationException: No service for type 'MediatR.IRequestHandler`2[WMS.Application.Features.Employees.Queries.GetEmployeeByIdQuery,WMS.Application.Features.Employees.DTOs.EmployeeDto]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.EmployeesController.GetById(Int32 id, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\EmployeesController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at WMS.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Middleware\GlobalExceptionMiddleware.cs:line 26
+2026-06-12 11:36:55.947 +05:30 [INF] WMS Request: GetEmployeesQuery {"Search":null,"DepartmentId":null,"RoleId":null,"Status":null,"PageNumber":1,"PageSize":10,"$type":"GetEmployeesQuery"}
+2026-06-12 11:36:57.400 +05:30 [WRN] WMS Long Running Request: GetEmployeesQuery (1431ms) {"Search":null,"DepartmentId":null,"RoleId":null,"Status":null,"PageNumber":1,"PageSize":10,"$type":"GetEmployeesQuery"}
+2026-06-12 11:36:57.418 +05:30 [INF] WMS Response: GetEmployeesQuery {"Items":[{"EmployeeId":1,"FirstName":"Hardik","LastName":"Patel","FullName":"Hardik Patel","Email":"hardik@test.com","PhoneNumber":"9999999999","Gender":"Male","DOB":"1998-01-01T00:00:00.0000000","DOJ":"2026-06-11T00:00:00.0000000","DepartmentId":1,"DepartmentName":"HR","RoleId":1,"RoleName":"Admin","Status":"Active","CreatedOn":"2026-06-11T15:03:58.6936554","UpdatedOn":null,"$type":"EmployeeDto"}],"TotalCount":1,"PageNumber":1,"PageSize":10,"TotalPages":1,"HasPreviousPage":false,"HasNextPage":false,"$type":"PagedResult`1"}
+2026-06-12 11:36:57.510 +05:30 [INF] HTTP GET /api/v1/Employees responded 200 in 1800.6579 ms
+2026-06-12 11:37:05.739 +05:30 [INF] WMS Request: GetEmployeeByIdQuery {"EmployeeId":1,"$type":"GetEmployeeByIdQuery"}
+2026-06-12 11:37:05.748 +05:30 [ERR] HTTP GET /api/v1/Employees/1 responded 500 in 11.5344 ms
+System.InvalidOperationException: No service for type 'MediatR.IRequestHandler`2[WMS.Application.Features.Employees.Queries.GetEmployeeByIdQuery,WMS.Application.Features.Employees.DTOs.EmployeeDto]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.EmployeesController.GetById(Int32 id, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\EmployeesController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-12 11:37:05.775 +05:30 [ERR] An unhandled exception occurred: No service for type 'MediatR.IRequestHandler`2[WMS.Application.Features.Employees.Queries.GetEmployeeByIdQuery,WMS.Application.Features.Employees.DTOs.EmployeeDto]' has been registered.
+System.InvalidOperationException: No service for type 'MediatR.IRequestHandler`2[WMS.Application.Features.Employees.Queries.GetEmployeeByIdQuery,WMS.Application.Features.Employees.DTOs.EmployeeDto]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.EmployeesController.GetById(Int32 id, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\EmployeesController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at WMS.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Middleware\GlobalExceptionMiddleware.cs:line 26
+2026-06-12 11:37:42.514 +05:30 [INF] WMS Request: GetEmployeeByIdQuery {"EmployeeId":1,"$type":"GetEmployeeByIdQuery"}
+2026-06-12 11:37:42.518 +05:30 [ERR] HTTP GET /api/v1/Employees/1 responded 500 in 5.5077 ms
+System.InvalidOperationException: No service for type 'MediatR.IRequestHandler`2[WMS.Application.Features.Employees.Queries.GetEmployeeByIdQuery,WMS.Application.Features.Employees.DTOs.EmployeeDto]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.EmployeesController.GetById(Int32 id, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\EmployeesController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-12 11:37:42.541 +05:30 [ERR] An unhandled exception occurred: No service for type 'MediatR.IRequestHandler`2[WMS.Application.Features.Employees.Queries.GetEmployeeByIdQuery,WMS.Application.Features.Employees.DTOs.EmployeeDto]' has been registered.
+System.InvalidOperationException: No service for type 'MediatR.IRequestHandler`2[WMS.Application.Features.Employees.Queries.GetEmployeeByIdQuery,WMS.Application.Features.Employees.DTOs.EmployeeDto]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.EmployeesController.GetById(Int32 id, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\EmployeesController.cs:line 50
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at WMS.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Middleware\GlobalExceptionMiddleware.cs:line 26
+2026-06-12 11:56:49.038 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-06-12 11:56:49.392 +05:30 [INF] HTTP GET /api/v1/Employees/1 responded 401 in 182.9876 ms
+2026-06-12 11:58:39.472 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-06-12 11:58:39.810 +05:30 [INF] WMS Request: LoginCommand {"Username":"admin","Password":"Admin@123","$type":"LoginCommand"}
+2026-06-12 11:58:41.559 +05:30 [WRN] WMS Long Running Request: LoginCommand (1714ms) {"Username":"admin","Password":"Admin@123","$type":"LoginCommand"}
+2026-06-12 11:58:41.568 +05:30 [INF] WMS Response: LoginCommand {"AccessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZW1wbG95ZWVJZCI6IiIsImp0aSI6ImNkMTgxNTJhLWNmOTQtNGQxZC1iZjIxLWY5ZTVmYTljODgxMiIsImV4cCI6MTc4MTI0OTMyMSwiaXNzIjoiV01TLkFQSSIsImF1ZCI6IldNUy5DbGllbnQifQ.z5T_CPhVgK3IczT1DBeomcE4vhzEbX_5XJieLpsGbMQ","RefreshToken":"LkQO5XxeC/KFPueaPl0hYKZAHrhWa4hnhVrCwqAPqrKTgGIUSs+RuF8mvDHZc3SXimZi0XsJUxzSG+MP8q75aA==","ExpiresAt":"2026-06-12T07:28:41.5584232Z","Username":"admin","Role":"Admin","EmployeeId":null,"$type":"LoginResponse"}
+2026-06-12 11:58:41.645 +05:30 [INF] HTTP POST /api/v1/Auth/login responded 200 in 2067.1845 ms
+2026-06-12 11:58:55.338 +05:30 [INF] HTTP GET /api/v1/Employees/1 responded 401 in 34.2075 ms
+2026-06-12 11:59:24.075 +05:30 [INF] HTTP GET /api/v1/Employees/1 responded 401 in 3.3634 ms
+2026-06-12 11:59:27.431 +05:30 [INF] HTTP GET /api/v1/Employees/1 responded 401 in 2.0821 ms
+2026-06-12 11:59:38.543 +05:30 [INF] HTTP GET /api/v1/Employees responded 401 in 0.9967 ms
+2026-06-12 12:00:08.585 +05:30 [INF] WMS Request: LoginCommand {"Username":"admin","Password":"Admin@123","$type":"LoginCommand"}
+2026-06-12 12:00:09.156 +05:30 [WRN] WMS Long Running Request: LoginCommand (561ms) {"Username":"admin","Password":"Admin@123","$type":"LoginCommand"}
+2026-06-12 12:00:09.165 +05:30 [INF] WMS Response: LoginCommand {"AccessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZW1wbG95ZWVJZCI6IiIsImp0aSI6Ijc4NzUxYTM1LTE4MDEtNGU4Ni1iYThkLTJkOGQ1ZTRkMzIxNCIsImV4cCI6MTc4MTI0OTQwOSwiaXNzIjoiV01TLkFQSSIsImF1ZCI6IldNUy5DbGllbnQifQ.oq2S5QPkWhCdEqWRSpRlW3IvTmzmh1RZjN9xuaXaWxI","RefreshToken":"bw4izTiR1vnfltOAb51qJq+Y89eMRlhMAftupge5UK6AGXRNQn/P7TeOsMNZBJjPNAWxRp3PPvQdZNrjeAi3IA==","ExpiresAt":"2026-06-12T07:30:09.1558946Z","Username":"admin","Role":"Admin","EmployeeId":null,"$type":"LoginResponse"}
+2026-06-12 12:00:09.182 +05:30 [INF] HTTP POST /api/v1/Auth/login responded 200 in 704.2284 ms
+2026-06-12 12:00:58.200 +05:30 [INF] WMS Request: GetEmployeesQuery {"Search":null,"DepartmentId":null,"RoleId":null,"Status":null,"PageNumber":1,"PageSize":10,"$type":"GetEmployeesQuery"}
+2026-06-12 12:00:58.839 +05:30 [WRN] WMS Long Running Request: GetEmployeesQuery (627ms) {"Search":null,"DepartmentId":null,"RoleId":null,"Status":null,"PageNumber":1,"PageSize":10,"$type":"GetEmployeesQuery"}
+2026-06-12 12:00:58.857 +05:30 [INF] WMS Response: GetEmployeesQuery {"Items":[{"EmployeeId":1,"FirstName":"Hardik","LastName":"Patel","FullName":"Hardik Patel","Email":"hardik@test.com","PhoneNumber":"9999999999","Gender":"Male","DOB":"1998-01-01T00:00:00.0000000","DOJ":"2026-06-11T00:00:00.0000000","DepartmentId":1,"DepartmentName":"HR","RoleId":1,"RoleName":"Admin","Status":"Active","CreatedOn":"2026-06-11T15:03:58.6936554","UpdatedOn":null,"$type":"EmployeeDto"}],"TotalCount":1,"PageNumber":1,"PageSize":10,"TotalPages":1,"HasPreviousPage":false,"HasNextPage":false,"$type":"PagedResult`1"}
+2026-06-12 12:00:58.970 +05:30 [INF] HTTP GET /api/v1/Employees responded 200 in 859.2778 ms
+2026-06-12 12:01:04.589 +05:30 [INF] WMS Request: GetEmployeeByIdQuery {"EmployeeId":1,"$type":"GetEmployeeByIdQuery"}
+2026-06-12 12:01:04.725 +05:30 [INF] WMS Response: GetEmployeeByIdQuery {"EmployeeId":1,"FirstName":"Hardik","LastName":"Patel","FullName":"Hardik Patel","Email":"hardik@test.com","PhoneNumber":"9999999999","Gender":"Male","DOB":"1998-01-01T00:00:00.0000000","DOJ":"2026-06-11T00:00:00.0000000","DepartmentId":1,"DepartmentName":null,"RoleId":1,"RoleName":null,"Status":"Active","CreatedOn":"2026-06-11T15:03:58.6936554","UpdatedOn":null,"$type":"EmployeeDto"}
+2026-06-12 12:01:04.756 +05:30 [INF] HTTP GET /api/v1/Employees/1 responded 200 in 177.5300 ms
+2026-06-12 12:11:07.648 +05:30 [INF] HTTP GET /api/v1/Reports responded 200 in 308.7445 ms
+2026-06-12 12:48:15.173 +05:30 [WRN] As of ""2026-06-12T07:18:10.6318663+00:00"", the heartbeat has been running for ""00:00:01.8836879"" which is longer than ""00:00:01"". This could be caused by thread pool starvation.
+2026-06-12 15:11:03.385 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-06-12 15:11:03.738 +05:30 [INF] WMS Request: LoginCommand {"Username":"admin","Password":"Admin@123","$type":"LoginCommand"}
+2026-06-12 15:11:05.450 +05:30 [WRN] WMS Long Running Request: LoginCommand (1674ms) {"Username":"admin","Password":"Admin@123","$type":"LoginCommand"}
+2026-06-12 15:11:05.460 +05:30 [INF] WMS Response: LoginCommand {"AccessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZW1wbG95ZWVJZCI6IiIsImp0aSI6IjVjZmZhZmQ4LWFmZmItNDBlZi1iNzI5LWI5YjIxODI3MTg5YiIsImV4cCI6MTc4MTI2MDg2NSwiaXNzIjoiV01TLkFQSSIsImF1ZCI6IldNUy5DbGllbnQifQ.ppIMzkNIkpN6mlyenjQGYyxIWEeq-pAmg2i5lIiwcmg","RefreshToken":"VaExkhk8cHKu84QkyE1RG+6ErZeM5YEYXLjnTofc936e1vRIJa744QQsr13XWgrXobiEOzAanYYe3be8W2kj7A==","ExpiresAt":"2026-06-12T10:41:05.4495482Z","Username":"admin","Role":"Admin","EmployeeId":null,"$type":"LoginResponse"}
+2026-06-12 15:11:05.538 +05:30 [INF] HTTP POST /api/v1/Auth/login responded 200 in 2057.1947 ms
+2026-06-12 15:11:34.452 +05:30 [INF] WMS Request: GetEmployeesQuery {"Search":null,"DepartmentId":null,"RoleId":null,"Status":null,"PageNumber":1,"PageSize":10,"$type":"GetEmployeesQuery"}
+2026-06-12 15:11:34.964 +05:30 [INF] WMS Response: GetEmployeesQuery {"Items":[{"EmployeeId":1,"FirstName":"Hardik","LastName":"Patel","FullName":"Hardik Patel","Email":"hardik@test.com","PhoneNumber":"9999999999","Gender":"Male","DOB":"1998-01-01T00:00:00.0000000","DOJ":"2026-06-11T00:00:00.0000000","DepartmentId":1,"DepartmentName":"HR","RoleId":1,"RoleName":"Admin","Status":"Active","CreatedOn":"2026-06-11T15:03:58.6936554","UpdatedOn":null,"$type":"EmployeeDto"}],"TotalCount":1,"PageNumber":1,"PageSize":10,"TotalPages":1,"HasPreviousPage":false,"HasNextPage":false,"$type":"PagedResult`1"}
+2026-06-12 15:11:35.041 +05:30 [INF] HTTP GET /api/v1/Employees responded 200 in 718.2672 ms
+2026-06-12 15:11:48.218 +05:30 [INF] WMS Request: GetEmployeeByIdQuery {"EmployeeId":1,"$type":"GetEmployeeByIdQuery"}
+2026-06-12 15:11:48.305 +05:30 [INF] WMS Response: GetEmployeeByIdQuery {"EmployeeId":1,"FirstName":"Hardik","LastName":"Patel","FullName":"Hardik Patel","Email":"hardik@test.com","PhoneNumber":"9999999999","Gender":"Male","DOB":"1998-01-01T00:00:00.0000000","DOJ":"2026-06-11T00:00:00.0000000","DepartmentId":1,"DepartmentName":null,"RoleId":1,"RoleName":null,"Status":"Active","CreatedOn":"2026-06-11T15:03:58.6936554","UpdatedOn":null,"$type":"EmployeeDto"}
+2026-06-12 15:11:48.318 +05:30 [INF] HTTP GET /api/v1/Employees/1 responded 200 in 111.9195 ms
+2026-06-12 15:12:33.767 +05:30 [INF] WMS Request: ApplyLeaveCommand {"Dto":{"EmpId":1,"LeaveType":"Casual","Reason":"Emergency","FromDate":"2026-06-12T09:41:57.3710000Z","ToDate":"2026-06-14T09:41:57.3710000Z","$type":"ApplyLeaveDto"},"$type":"ApplyLeaveCommand"}
+2026-06-12 15:12:41.520 +05:30 [ERR] HTTP POST /api/v1/Leaves/apply responded 500 in 7811.3781 ms
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+ApplyLeaveDto -> Leave
+WMS.Application.Features.Leaves.DTOs.ApplyLeaveDto -> WMS.Domain.Entities.Leave
+   at lambda_method467(Closure, Object, Leave, ResolutionContext)
+   at WMS.Application.Features.Leaves.Commands.ApplyLeaveCommandHandler.Handle(ApplyLeaveCommand request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Leaves\Commands\ApplyLeaveCommand.cs:line 32
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 34
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.LeavesController.Apply(ApplyLeaveDto dto, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\LeavesController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-12 15:12:41.584 +05:30 [ERR] An unhandled exception occurred: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+ApplyLeaveDto -> Leave
+WMS.Application.Features.Leaves.DTOs.ApplyLeaveDto -> WMS.Domain.Entities.Leave
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+ApplyLeaveDto -> Leave
+WMS.Application.Features.Leaves.DTOs.ApplyLeaveDto -> WMS.Domain.Entities.Leave
+   at lambda_method467(Closure, Object, Leave, ResolutionContext)
+   at WMS.Application.Features.Leaves.Commands.ApplyLeaveCommandHandler.Handle(ApplyLeaveCommand request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Leaves\Commands\ApplyLeaveCommand.cs:line 32
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 34
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.LeavesController.Apply(ApplyLeaveDto dto, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\LeavesController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at WMS.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Middleware\GlobalExceptionMiddleware.cs:line 26
+2026-06-12 15:12:50.854 +05:30 [INF] WMS Request: ApplyLeaveCommand {"Dto":{"EmpId":1,"LeaveType":"Casual","Reason":"Emergency","FromDate":"2026-06-12T09:41:57.3710000Z","ToDate":"2026-06-14T09:41:57.3710000Z","$type":"ApplyLeaveDto"},"$type":"ApplyLeaveCommand"}
+2026-06-12 15:12:50.912 +05:30 [ERR] HTTP POST /api/v1/Leaves/apply responded 500 in 63.2522 ms
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+ApplyLeaveDto -> Leave
+WMS.Application.Features.Leaves.DTOs.ApplyLeaveDto -> WMS.Domain.Entities.Leave
+   at lambda_method467(Closure, Object, Leave, ResolutionContext)
+   at WMS.Application.Features.Leaves.Commands.ApplyLeaveCommandHandler.Handle(ApplyLeaveCommand request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Leaves\Commands\ApplyLeaveCommand.cs:line 32
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 34
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.LeavesController.Apply(ApplyLeaveDto dto, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\LeavesController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-12 15:12:50.940 +05:30 [ERR] An unhandled exception occurred: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+ApplyLeaveDto -> Leave
+WMS.Application.Features.Leaves.DTOs.ApplyLeaveDto -> WMS.Domain.Entities.Leave
+AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+ApplyLeaveDto -> Leave
+WMS.Application.Features.Leaves.DTOs.ApplyLeaveDto -> WMS.Domain.Entities.Leave
+   at lambda_method467(Closure, Object, Leave, ResolutionContext)
+   at WMS.Application.Features.Leaves.Commands.ApplyLeaveCommandHandler.Handle(ApplyLeaveCommand request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Leaves\Commands\ApplyLeaveCommand.cs:line 32
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 34
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.LeavesController.Apply(ApplyLeaveDto dto, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\LeavesController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at WMS.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Middleware\GlobalExceptionMiddleware.cs:line 26
+2026-06-12 15:13:02.671 +05:30 [INF] WMS Request: GetProjectsQuery {"Search":null,"Status":null,"ClientId":null,"PageNumber":1,"PageSize":10,"$type":"GetProjectsQuery"}
+2026-06-12 15:13:02.942 +05:30 [INF] WMS Response: GetProjectsQuery {"Items":[],"TotalCount":0,"PageNumber":1,"PageSize":10,"TotalPages":0,"HasPreviousPage":false,"HasNextPage":false,"$type":"PagedResult`1"}
+2026-06-12 15:13:02.961 +05:30 [INF] HTTP GET /api/v1/Projects responded 200 in 316.7621 ms
+2026-06-12 15:13:13.154 +05:30 [INF] WMS Request: GetProjectByIdQuery {"ProjectId":1,"$type":"GetProjectByIdQuery"}
+2026-06-12 15:13:13.217 +05:30 [ERR] HTTP GET /api/v1/Projects/1 responded 500 in 74.4317 ms
+WMS.Application.Common.Exceptions.NotFoundException: Project with id '1' was not found.
+   at GetProjectByIdQueryHandler.Handle(GetProjectByIdQuery request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Projects\Queries\GetProjectByIdQuery.cs:line 36
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at ProjectsController.GetById(Int32 id, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\ProjectsController.cs:line 47
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-12 15:13:13.230 +05:30 [ERR] An unhandled exception occurred: Project with id '1' was not found.
+WMS.Application.Common.Exceptions.NotFoundException: Project with id '1' was not found.
+   at GetProjectByIdQueryHandler.Handle(GetProjectByIdQuery request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Projects\Queries\GetProjectByIdQuery.cs:line 36
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at ProjectsController.GetById(Int32 id, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\ProjectsController.cs:line 47
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at WMS.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Middleware\GlobalExceptionMiddleware.cs:line 26
+2026-06-12 15:25:33.931 +05:30 [WRN] As of ""2026-06-12T09:55:32.0627619+00:00"", the heartbeat has been running for ""00:00:01.2186361"" which is longer than ""00:00:01"". This could be caused by thread pool starvation.
+2026-06-12 15:32:57.830 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-06-12 15:32:58.071 +05:30 [INF] WMS Request: LoginCommand {"Username":"admin","Password":"Admin@123","$type":"LoginCommand"}
+2026-06-12 15:32:59.743 +05:30 [WRN] WMS Long Running Request: LoginCommand (1634ms) {"Username":"admin","Password":"Admin@123","$type":"LoginCommand"}
+2026-06-12 15:32:59.755 +05:30 [INF] WMS Response: LoginCommand {"AccessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZW1wbG95ZWVJZCI6IiIsImp0aSI6IjQ3YTk1ZTQzLWQ0NjEtNDkyYy04MGI0LTQ0NzJjMjk5Mzg0NSIsImV4cCI6MTc4MTI2MjE3OSwiaXNzIjoiV01TLkFQSSIsImF1ZCI6IldNUy5DbGllbnQifQ.NR3lLB5qWKYRzmLEkUkv3vA6XQr9xG5Ep13TXVkDU2o","RefreshToken":"9P/ZAKCB/TQmH/7BTS5CtUV4MjDWFLobAfhP/EqmQb7nIwOiyo4FnBR5suIAjfnkd+h5S9wL6FkUBZVvPhIodQ==","ExpiresAt":"2026-06-12T11:02:59.7420157Z","Username":"admin","Role":"Admin","EmployeeId":null,"$type":"LoginResponse"}
+2026-06-12 15:32:59.817 +05:30 [INF] HTTP POST /api/v1/Auth/login responded 200 in 1918.0798 ms
+2026-06-12 15:34:43.958 +05:30 [INF] WMS Request: LoginCommand {"Username":"admin","Password":"Admin@123","$type":"LoginCommand"}
+2026-06-12 15:34:44.759 +05:30 [WRN] WMS Long Running Request: LoginCommand (778ms) {"Username":"admin","Password":"Admin@123","$type":"LoginCommand"}
+2026-06-12 15:34:44.768 +05:30 [INF] WMS Response: LoginCommand {"AccessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZW1wbG95ZWVJZCI6IiIsImp0aSI6IjJiYzA4NjBjLTQ3NzctNDRmOS1hNmE2LTA0MGY1NTc5ZmUxZiIsImV4cCI6MTc4MTI2MjI4NCwiaXNzIjoiV01TLkFQSSIsImF1ZCI6IldNUy5DbGllbnQifQ.U8v6mggGe83OWgRljBdDCHcgcrSM74gu295iPD3XtZo","RefreshToken":"iv8thxcQfCqOc5lyzWl/xhVWDUv6FMq+OkJAdTATP5PnOzxK6F9qSqVUArMb+7jCtNJMsxgK2z+JSpfnGOrkCQ==","ExpiresAt":"2026-06-12T11:04:44.7593773Z","Username":"admin","Role":"Admin","EmployeeId":null,"$type":"LoginResponse"}
+2026-06-12 15:34:44.783 +05:30 [INF] HTTP POST /api/v1/Auth/login responded 200 in 940.3998 ms
+2026-06-12 15:37:34.358 +05:30 [INF] HTTP OPTIONS /api/v1/auth/login responded 204 in 57.0109 ms
+2026-06-12 15:37:34.488 +05:30 [INF] WMS Request: LoginCommand {"Username":"admin","Password":"Admin@123","$type":"LoginCommand"}
+2026-06-12 15:37:38.238 +05:30 [WRN] WMS Long Running Request: LoginCommand (3741ms) {"Username":"admin","Password":"Admin@123","$type":"LoginCommand"}
+2026-06-12 15:37:38.245 +05:30 [INF] WMS Response: LoginCommand {"AccessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZW1wbG95ZWVJZCI6IiIsImp0aSI6ImEwNjcyNzg3LThlMjctNGZmMS05NjdkLWJkZTI5ODFlODRlNSIsImV4cCI6MTc4MTI2MjQ1NSwiaXNzIjoiV01TLkFQSSIsImF1ZCI6IldNUy5DbGllbnQifQ.-9l922QzdG0BNFmFz0uZqu-LjnipkxaSaI3lG4DzBmU","RefreshToken":"9mA/lE9ZSDwfx/RCuSxN+iWuDVgiSbGMhlm23OweXxnrqTwRVa5HQyXPnMPOoVqsefv8zRdHTtI/boqMzJt76Q==","ExpiresAt":"2026-06-12T11:07:38.2381188Z","Username":"admin","Role":"Admin","EmployeeId":null,"$type":"LoginResponse"}
+2026-06-12 15:37:38.268 +05:30 [INF] HTTP POST /api/v1/auth/login responded 200 in 3876.9371 ms
+2026-06-12 15:37:38.526 +05:30 [INF] HTTP OPTIONS /api/v1/dashboard/summary responded 204 in 0.2806 ms
+2026-06-12 15:37:38.864 +05:30 [INF] WMS Request: GetDashboardSummaryQuery {"$type":"GetDashboardSummaryQuery"}
+2026-06-12 15:37:39.413 +05:30 [ERR] HTTP GET /api/v1/dashboard/summary responded 500 in 872.3131 ms
+System.InvalidOperationException: The LINQ expression 'DbSet<Attendance>()
+    .Where(a => a.AttendanceDate >= __last7Days_0)
+    .GroupBy(a => a.AttendanceDate)
+    .Select(g => new AttendanceTrendDto{ 
+        Date = g.Key.ToString("MMM dd"), 
+        Present = g
+            .AsQueryable()
+            .Count(), 
+        WFH = g
+            .AsQueryable()
+            .Count(e => e.WorkMode == "WFH"), 
+        WFO = g
+            .AsQueryable()
+            .Count(e => e.WorkMode == "WFO"), 
+        Absent = 0 
+    }
+    )
+    .OrderBy(e0 => e0.Date)' could not be translated. Additional information: Translation of method 'System.DateTime.ToString' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutorExpression[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass11_0`1.<ExecuteCore>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at WMS.Application.Features.Dashboard.Queries.GetDashboardSummaryQueryHandler.Handle(GetDashboardSummaryQuery request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Dashboard\Queries\GetDashboardSummaryQuery.cs:line 48
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at DashboardController.GetSummary(CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\DashboardController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-12 15:37:39.628 +05:30 [ERR] An unhandled exception occurred: The LINQ expression 'DbSet<Attendance>()
+    .Where(a => a.AttendanceDate >= __last7Days_0)
+    .GroupBy(a => a.AttendanceDate)
+    .Select(g => new AttendanceTrendDto{ 
+        Date = g.Key.ToString("MMM dd"), 
+        Present = g
+            .AsQueryable()
+            .Count(), 
+        WFH = g
+            .AsQueryable()
+            .Count(e => e.WorkMode == "WFH"), 
+        WFO = g
+            .AsQueryable()
+            .Count(e => e.WorkMode == "WFO"), 
+        Absent = 0 
+    }
+    )
+    .OrderBy(e0 => e0.Date)' could not be translated. Additional information: Translation of method 'System.DateTime.ToString' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+System.InvalidOperationException: The LINQ expression 'DbSet<Attendance>()
+    .Where(a => a.AttendanceDate >= __last7Days_0)
+    .GroupBy(a => a.AttendanceDate)
+    .Select(g => new AttendanceTrendDto{ 
+        Date = g.Key.ToString("MMM dd"), 
+        Present = g
+            .AsQueryable()
+            .Count(), 
+        WFH = g
+            .AsQueryable()
+            .Count(e => e.WorkMode == "WFH"), 
+        WFO = g
+            .AsQueryable()
+            .Count(e => e.WorkMode == "WFO"), 
+        Absent = 0 
+    }
+    )
+    .OrderBy(e0 => e0.Date)' could not be translated. Additional information: Translation of method 'System.DateTime.ToString' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutorExpression[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass11_0`1.<ExecuteCore>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at WMS.Application.Features.Dashboard.Queries.GetDashboardSummaryQueryHandler.Handle(GetDashboardSummaryQuery request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Dashboard\Queries\GetDashboardSummaryQuery.cs:line 48
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at DashboardController.GetSummary(CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\DashboardController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at WMS.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Middleware\GlobalExceptionMiddleware.cs:line 26
+2026-06-12 15:37:54.275 +05:30 [INF] HTTP OPTIONS /api/v1/dashboard/summary responded 204 in 0.1697 ms
+2026-06-12 15:37:55.017 +05:30 [INF] WMS Request: GetDashboardSummaryQuery {"$type":"GetDashboardSummaryQuery"}
+2026-06-12 15:37:55.306 +05:30 [ERR] HTTP GET /api/v1/dashboard/summary responded 500 in 1016.0976 ms
+System.InvalidOperationException: The LINQ expression 'DbSet<Attendance>()
+    .Where(a => a.AttendanceDate >= __last7Days_0)
+    .GroupBy(a => a.AttendanceDate)
+    .Select(g => new AttendanceTrendDto{ 
+        Date = g.Key.ToString("MMM dd"), 
+        Present = g
+            .AsQueryable()
+            .Count(), 
+        WFH = g
+            .AsQueryable()
+            .Count(e => e.WorkMode == "WFH"), 
+        WFO = g
+            .AsQueryable()
+            .Count(e => e.WorkMode == "WFO"), 
+        Absent = 0 
+    }
+    )
+    .OrderBy(e0 => e0.Date)' could not be translated. Additional information: Translation of method 'System.DateTime.ToString' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutorExpression[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass11_0`1.<ExecuteCore>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at WMS.Application.Features.Dashboard.Queries.GetDashboardSummaryQueryHandler.Handle(GetDashboardSummaryQuery request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Dashboard\Queries\GetDashboardSummaryQuery.cs:line 48
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at DashboardController.GetSummary(CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\DashboardController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-12 15:37:55.341 +05:30 [ERR] An unhandled exception occurred: The LINQ expression 'DbSet<Attendance>()
+    .Where(a => a.AttendanceDate >= __last7Days_0)
+    .GroupBy(a => a.AttendanceDate)
+    .Select(g => new AttendanceTrendDto{ 
+        Date = g.Key.ToString("MMM dd"), 
+        Present = g
+            .AsQueryable()
+            .Count(), 
+        WFH = g
+            .AsQueryable()
+            .Count(e => e.WorkMode == "WFH"), 
+        WFO = g
+            .AsQueryable()
+            .Count(e => e.WorkMode == "WFO"), 
+        Absent = 0 
+    }
+    )
+    .OrderBy(e0 => e0.Date)' could not be translated. Additional information: Translation of method 'System.DateTime.ToString' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+System.InvalidOperationException: The LINQ expression 'DbSet<Attendance>()
+    .Where(a => a.AttendanceDate >= __last7Days_0)
+    .GroupBy(a => a.AttendanceDate)
+    .Select(g => new AttendanceTrendDto{ 
+        Date = g.Key.ToString("MMM dd"), 
+        Present = g
+            .AsQueryable()
+            .Count(), 
+        WFH = g
+            .AsQueryable()
+            .Count(e => e.WorkMode == "WFH"), 
+        WFO = g
+            .AsQueryable()
+            .Count(e => e.WorkMode == "WFO"), 
+        Absent = 0 
+    }
+    )
+    .OrderBy(e0 => e0.Date)' could not be translated. Additional information: Translation of method 'System.DateTime.ToString' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutorExpression[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass11_0`1.<ExecuteCore>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at WMS.Application.Features.Dashboard.Queries.GetDashboardSummaryQueryHandler.Handle(GetDashboardSummaryQuery request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Dashboard\Queries\GetDashboardSummaryQuery.cs:line 48
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at DashboardController.GetSummary(CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\DashboardController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at WMS.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Middleware\GlobalExceptionMiddleware.cs:line 26
+2026-06-12 15:38:13.715 +05:30 [INF] HTTP OPTIONS /api/v1/dashboard/summary responded 204 in 0.1333 ms
+2026-06-12 15:38:13.733 +05:30 [INF] WMS Request: GetDashboardSummaryQuery {"$type":"GetDashboardSummaryQuery"}
+2026-06-12 15:38:13.780 +05:30 [ERR] HTTP GET /api/v1/dashboard/summary responded 500 in 55.1421 ms
+System.InvalidOperationException: The LINQ expression 'DbSet<Attendance>()
+    .Where(a => a.AttendanceDate >= __last7Days_0)
+    .GroupBy(a => a.AttendanceDate)
+    .Select(g => new AttendanceTrendDto{ 
+        Date = g.Key.ToString("MMM dd"), 
+        Present = g
+            .AsQueryable()
+            .Count(), 
+        WFH = g
+            .AsQueryable()
+            .Count(e => e.WorkMode == "WFH"), 
+        WFO = g
+            .AsQueryable()
+            .Count(e => e.WorkMode == "WFO"), 
+        Absent = 0 
+    }
+    )
+    .OrderBy(e0 => e0.Date)' could not be translated. Additional information: Translation of method 'System.DateTime.ToString' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutorExpression[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass11_0`1.<ExecuteCore>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at WMS.Application.Features.Dashboard.Queries.GetDashboardSummaryQueryHandler.Handle(GetDashboardSummaryQuery request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Dashboard\Queries\GetDashboardSummaryQuery.cs:line 48
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at DashboardController.GetSummary(CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\DashboardController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-12 15:38:13.801 +05:30 [ERR] An unhandled exception occurred: The LINQ expression 'DbSet<Attendance>()
+    .Where(a => a.AttendanceDate >= __last7Days_0)
+    .GroupBy(a => a.AttendanceDate)
+    .Select(g => new AttendanceTrendDto{ 
+        Date = g.Key.ToString("MMM dd"), 
+        Present = g
+            .AsQueryable()
+            .Count(), 
+        WFH = g
+            .AsQueryable()
+            .Count(e => e.WorkMode == "WFH"), 
+        WFO = g
+            .AsQueryable()
+            .Count(e => e.WorkMode == "WFO"), 
+        Absent = 0 
+    }
+    )
+    .OrderBy(e0 => e0.Date)' could not be translated. Additional information: Translation of method 'System.DateTime.ToString' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+System.InvalidOperationException: The LINQ expression 'DbSet<Attendance>()
+    .Where(a => a.AttendanceDate >= __last7Days_0)
+    .GroupBy(a => a.AttendanceDate)
+    .Select(g => new AttendanceTrendDto{ 
+        Date = g.Key.ToString("MMM dd"), 
+        Present = g
+            .AsQueryable()
+            .Count(), 
+        WFH = g
+            .AsQueryable()
+            .Count(e => e.WorkMode == "WFH"), 
+        WFO = g
+            .AsQueryable()
+            .Count(e => e.WorkMode == "WFO"), 
+        Absent = 0 
+    }
+    )
+    .OrderBy(e0 => e0.Date)' could not be translated. Additional information: Translation of method 'System.DateTime.ToString' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutorExpression[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass11_0`1.<ExecuteCore>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at WMS.Application.Features.Dashboard.Queries.GetDashboardSummaryQueryHandler.Handle(GetDashboardSummaryQuery request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Dashboard\Queries\GetDashboardSummaryQuery.cs:line 48
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at DashboardController.GetSummary(CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\DashboardController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at WMS.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Middleware\GlobalExceptionMiddleware.cs:line 26
+2026-06-12 16:06:31.122 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-06-12 16:06:31.277 +05:30 [INF] HTTP GET /api/v1/Dashboard/summary responded 401 in 67.8415 ms
+2026-06-12 16:06:58.290 +05:30 [INF] WMS Request: LoginCommand {"Username":"admin","Password":"Admin@123","$type":"LoginCommand"}
+2026-06-12 16:07:00.061 +05:30 [WRN] WMS Long Running Request: LoginCommand (1742ms) {"Username":"admin","Password":"Admin@123","$type":"LoginCommand"}
+2026-06-12 16:07:00.072 +05:30 [INF] WMS Response: LoginCommand {"AccessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZW1wbG95ZWVJZCI6IiIsImp0aSI6IjE3MGEwZTQzLWIzZmMtNDk0My04ZmJhLWM0ZDBiNTEyMzQ1ZiIsImV4cCI6MTc4MTI2NDIxOSwiaXNzIjoiV01TLkFQSSIsImF1ZCI6IldNUy5DbGllbnQifQ.C4HQM9tgtu3XqqvGb_tHiZRaQaARNWyfD3JCvTWxfJE","RefreshToken":"xILNTS9uCTFsrLvePVUww0SwwljawmgCTBr1XNWTHB67swXmWnPDnqyJSE4dXmNYGDU+hrvJ7v4KIaH0Xkv1BQ==","ExpiresAt":"2026-06-12T11:37:00.0607607Z","Username":"admin","Role":"Admin","EmployeeId":null,"$type":"LoginResponse"}
+2026-06-12 16:07:00.160 +05:30 [INF] HTTP POST /api/v1/Auth/login responded 200 in 1986.8433 ms
+2026-06-12 16:07:26.288 +05:30 [INF] WMS Request: GetDashboardSummaryQuery {"$type":"GetDashboardSummaryQuery"}
+2026-06-12 16:07:26.608 +05:30 [ERR] HTTP GET /api/v1/Dashboard/summary responded 500 in 392.1541 ms
+System.InvalidOperationException: The LINQ expression 'DbSet<Attendance>()
+    .Where(a => a.AttendanceDate >= __last7Days_0)
+    .GroupBy(a => a.AttendanceDate)
+    .Select(g => new AttendanceTrendDto{ 
+        Date = g.Key.ToString("MMM dd"), 
+        Present = g
+            .AsQueryable()
+            .Count(), 
+        WFH = g
+            .AsQueryable()
+            .Count(e => e.WorkMode == "WFH"), 
+        WFO = g
+            .AsQueryable()
+            .Count(e => e.WorkMode == "WFO"), 
+        Absent = 0 
+    }
+    )
+    .OrderBy(e0 => e0.Date)' could not be translated. Additional information: Translation of method 'System.DateTime.ToString' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutorExpression[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass11_0`1.<ExecuteCore>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at WMS.Application.Features.Dashboard.Queries.GetDashboardSummaryQueryHandler.Handle(GetDashboardSummaryQuery request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Dashboard\Queries\GetDashboardSummaryQuery.cs:line 48
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at DashboardController.GetSummary(CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\DashboardController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-12 16:07:26.648 +05:30 [ERR] An unhandled exception occurred: The LINQ expression 'DbSet<Attendance>()
+    .Where(a => a.AttendanceDate >= __last7Days_0)
+    .GroupBy(a => a.AttendanceDate)
+    .Select(g => new AttendanceTrendDto{ 
+        Date = g.Key.ToString("MMM dd"), 
+        Present = g
+            .AsQueryable()
+            .Count(), 
+        WFH = g
+            .AsQueryable()
+            .Count(e => e.WorkMode == "WFH"), 
+        WFO = g
+            .AsQueryable()
+            .Count(e => e.WorkMode == "WFO"), 
+        Absent = 0 
+    }
+    )
+    .OrderBy(e0 => e0.Date)' could not be translated. Additional information: Translation of method 'System.DateTime.ToString' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+System.InvalidOperationException: The LINQ expression 'DbSet<Attendance>()
+    .Where(a => a.AttendanceDate >= __last7Days_0)
+    .GroupBy(a => a.AttendanceDate)
+    .Select(g => new AttendanceTrendDto{ 
+        Date = g.Key.ToString("MMM dd"), 
+        Present = g
+            .AsQueryable()
+            .Count(), 
+        WFH = g
+            .AsQueryable()
+            .Count(e => e.WorkMode == "WFH"), 
+        WFO = g
+            .AsQueryable()
+            .Count(e => e.WorkMode == "WFO"), 
+        Absent = 0 
+    }
+    )
+    .OrderBy(e0 => e0.Date)' could not be translated. Additional information: Translation of method 'System.DateTime.ToString' failed. If this method can be mapped to your custom function, see https://go.microsoft.com/fwlink/?linkid=2132413 for more information. Either rewrite the query in a form that can be translated, or switch to client evaluation explicitly by inserting a call to 'AsEnumerable', 'AsAsyncEnumerable', 'ToList', or 'ToListAsync'. See https://go.microsoft.com/fwlink/?linkid=2101038 for more information.
+   at Microsoft.EntityFrameworkCore.Query.QueryableMethodTranslatingExpressionVisitor.Translate(Expression expression)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutorExpression[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.QueryCompilationContext.CreateQueryExecutor[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Storage.Database.CompileQuery[TResult](Expression query, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.CompileQueryCore[TResult](IDatabase database, Expression query, IModel model, Boolean async)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass11_0`1.<ExecuteCore>b__0()
+   at Microsoft.EntityFrameworkCore.Query.Internal.CompiledQueryCache.GetOrAddQuery[TResult](Object cacheKey, Func`1 compiler)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteCore[TResult](Expression query, Boolean async, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.ExecuteAsync[TResult](Expression query, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.ExecuteAsync[TResult](Expression expression, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1.GetAsyncEnumerator(CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.ConfiguredCancelableAsyncEnumerable`1.GetAsyncEnumerator()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at WMS.Application.Features.Dashboard.Queries.GetDashboardSummaryQueryHandler.Handle(GetDashboardSummaryQuery request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Dashboard\Queries\GetDashboardSummaryQuery.cs:line 48
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at DashboardController.GetSummary(CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\DashboardController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at WMS.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Middleware\GlobalExceptionMiddleware.cs:line 26
+2026-06-12 16:12:42.964 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-06-12 16:12:43.314 +05:30 [INF] WMS Request: LoginCommand {"Username":"admin","Password":"Admin@123","$type":"LoginCommand"}
+2026-06-12 16:12:44.786 +05:30 [WRN] WMS Long Running Request: LoginCommand (1430ms) {"Username":"admin","Password":"Admin@123","$type":"LoginCommand"}
+2026-06-12 16:12:44.796 +05:30 [INF] WMS Response: LoginCommand {"AccessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZW1wbG95ZWVJZCI6IiIsImp0aSI6ImU5OTE2MmU4LTFkZWEtNDg3MC05N2JjLWZmMTY0YzhjZDU4YiIsImV4cCI6MTc4MTI2NDU2NCwiaXNzIjoiV01TLkFQSSIsImF1ZCI6IldNUy5DbGllbnQifQ.rIgd7DILMJBBly9gZk_fqzD9C5iJ3V17K2oOl7tUdLw","RefreshToken":"qHZgw5DDM0cHcICJ9RYUp+kb9hoSfpawN0I5LT1saMM1Ceoy/xYjmdSDvtd6Jf3s0ufzaqaSPWtnbpLSOs+KAA==","ExpiresAt":"2026-06-12T11:42:44.7856449Z","Username":"admin","Role":"Admin","EmployeeId":null,"$type":"LoginResponse"}
+2026-06-12 16:12:44.844 +05:30 [INF] HTTP POST /api/v1/Auth/login responded 200 in 1775.2414 ms
+2026-06-12 16:13:13.417 +05:30 [INF] WMS Request: GetDashboardSummaryQuery {"$type":"GetDashboardSummaryQuery"}
+2026-06-12 16:13:13.822 +05:30 [ERR] Failed executing DbCommand (28ms) [Parameters=[@__last6Months_0='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SELECT [l0].[Month], [l0].[Year], COUNT(CASE
+    WHEN [l0].[Status] = N'Approved' THEN 1
+END), COUNT(CASE
+    WHEN [l0].[Status] = N'Pending' THEN 1
+END), COUNT(CASE
+    WHEN [l0].[Status] = N'Rejected' THEN 1
+END)
+FROM (
+    SELECT [l].[Status], DATEPART(year, [l].[AppliedOn]) AS [Year], DATEPART(month, [l].[AppliedOn]) AS [Month]
+    FROM [Leaves] AS [l]
+    WHERE [l].[AppliedOn] >= @__last6Months_0
+) AS [l0]
+GROUP BY [l0].[Year], [l0].[Month]
+ORDER BY [l0].[Month] + / + [l0].[Year]
+2026-06-12 16:13:13.872 +05:30 [ERR] An exception occurred while iterating over the results of a query for context type 'WMS.Infrastructure.Persistence.WmsDbContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '/'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:68e5610a-0e0d-4f50-a683-1335f6bda6b6
+Error Number:102,State:1,Class:15
+Microsoft.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '/'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:68e5610a-0e0d-4f50-a683-1335f6bda6b6
+Error Number:102,State:1,Class:15
+2026-06-12 16:13:13.889 +05:30 [ERR] HTTP GET /api/v1/Dashboard/summary responded 500 in 547.7005 ms
+Microsoft.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '/'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at WMS.Application.Features.Dashboard.Queries.GetDashboardSummaryQueryHandler.Handle(GetDashboardSummaryQuery request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Dashboard\Queries\GetDashboardSummaryQuery.cs:line 72
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at DashboardController.GetSummary(CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\DashboardController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+ClientConnectionId:68e5610a-0e0d-4f50-a683-1335f6bda6b6
+Error Number:102,State:1,Class:15
+2026-06-12 16:13:13.938 +05:30 [ERR] An unhandled exception occurred: Incorrect syntax near '/'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near '/'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.<>c__DisplayClass30_0`2.<<ExecuteAsync>b__0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteImplementationAsync[TState,TResult](Func`4 operation, Func`4 verifySucceeded, TState state, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.ExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+   at WMS.Application.Features.Dashboard.Queries.GetDashboardSummaryQueryHandler.Handle(GetDashboardSummaryQuery request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Dashboard\Queries\GetDashboardSummaryQuery.cs:line 72
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at DashboardController.GetSummary(CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\DashboardController.cs:line 30
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at WMS.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Middleware\GlobalExceptionMiddleware.cs:line 26
+ClientConnectionId:68e5610a-0e0d-4f50-a683-1335f6bda6b6
+Error Number:102,State:1,Class:15
+2026-06-12 16:13:51.633 +05:30 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 3.6309 ms

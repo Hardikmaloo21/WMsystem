@@ -1,0 +1,371 @@
+2026-06-11 03:36:08.788 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-06-11 03:36:09.000 +05:30 [INF] HTTP GET /health responded 200 in 120.8111 ms
+2026-06-11 03:36:09.458 +05:30 [INF] HTTP GET /favicon.ico responded 404 in 3.6301 ms
+2026-06-11 03:36:19.490 +05:30 [INF] HTTP GET /api/v1/employees responded 200 in 75.7769 ms
+2026-06-11 19:30:29.338 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-06-11 19:30:29.511 +05:30 [INF] HTTP GET /health responded 200 in 96.3428 ms
+2026-06-11 19:33:49.515 +05:30 [INF] WMS Request: LoginCommand {"Username":"string1","Password":"string1","$type":"LoginCommand"}
+2026-06-11 19:33:51.026 +05:30 [ERR] HTTP POST /api/v1/Auth/login responded 500 in 1867.0371 ms
+WMS.Application.Common.Exceptions.UnauthorizedException: Invalid username or password.
+   at WMS.Application.Features.Auth.Commands.LoginCommandHandler.Handle(LoginCommand request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Auth\Commands\LoginCommandHandler.cs:line 27
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 34
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.AuthController.Login(LoginCommand command, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\AuthController.cs:line 28
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-11 19:33:51.097 +05:30 [ERR] An unhandled exception occurred: Invalid username or password.
+WMS.Application.Common.Exceptions.UnauthorizedException: Invalid username or password.
+   at WMS.Application.Features.Auth.Commands.LoginCommandHandler.Handle(LoginCommand request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Auth\Commands\LoginCommandHandler.cs:line 27
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 34
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.AuthController.Login(LoginCommand command, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\AuthController.cs:line 28
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at WMS.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Middleware\GlobalExceptionMiddleware.cs:line 26
+2026-06-11 19:34:09.338 +05:30 [INF] WMS Request: LoginCommand {"Username":"string","Password":"string","$type":"LoginCommand"}
+2026-06-11 19:34:09.470 +05:30 [ERR] HTTP POST /api/v1/Auth/login responded 500 in 146.2784 ms
+WMS.Application.Common.Exceptions.UnauthorizedException: Invalid username or password.
+   at WMS.Application.Features.Auth.Commands.LoginCommandHandler.Handle(LoginCommand request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Auth\Commands\LoginCommandHandler.cs:line 27
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 34
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.AuthController.Login(LoginCommand command, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\AuthController.cs:line 28
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-11 19:34:09.481 +05:30 [ERR] An unhandled exception occurred: Invalid username or password.
+WMS.Application.Common.Exceptions.UnauthorizedException: Invalid username or password.
+   at WMS.Application.Features.Auth.Commands.LoginCommandHandler.Handle(LoginCommand request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Auth\Commands\LoginCommandHandler.cs:line 27
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 34
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.AuthController.Login(LoginCommand command, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\AuthController.cs:line 28
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at WMS.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Middleware\GlobalExceptionMiddleware.cs:line 26
+2026-06-11 20:19:08.305 +05:30 [INF] HTTP GET /health responded 200 in 267.3900 ms
+2026-06-11 20:19:33.076 +05:30 [INF] WMS Request: LoginCommand {"Username":"admin","Password":"Admin@123","$type":"LoginCommand"}
+2026-06-11 20:19:34.210 +05:30 [ERR] HTTP POST /api/v1/Auth/login responded 500 in 1243.6416 ms
+System.ArgumentOutOfRangeException: IDX10720: Unable to create KeyedHashAlgorithm for algorithm 'HS256', the key size must be greater than: '256' bits, key has '240' bits. (Parameter 'keyBytes')
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.ValidateKeySize(Byte[] keyBytes, String algorithm, Int32 expectedNumberOfBytes)
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.CreateKeyedHashAlgorithm(Byte[] keyBytes, String algorithm)
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider.CreateKeyedHashAlgorithm()
+   at Microsoft.IdentityModel.Tokens.DisposableObjectPool`1.CreateInstance()
+   at Microsoft.IdentityModel.Tokens.DisposableObjectPool`1.Allocate()
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider.GetKeyedHashAlgorithm(Byte[] keyBytes, String algorithm)
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider.Sign(Byte[] input)
+   at Microsoft.IdentityModel.JsonWebTokens.JwtTokenUtilities.CreateEncodedSignature(String input, SigningCredentials signingCredentials)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.WriteToken(SecurityToken token)
+   at WMS.Infrastructure.Services.JwtTokenService.GenerateAccessToken(UserLogin user) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Infrastructure\Services\JwtTokenService.cs:line 47
+   at WMS.Application.Features.Auth.Commands.LoginCommandHandler.Handle(LoginCommand request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Auth\Commands\LoginCommandHandler.cs:line 35
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 34
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.AuthController.Login(LoginCommand command, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\AuthController.cs:line 28
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-11 20:19:34.259 +05:30 [ERR] An unhandled exception occurred: IDX10720: Unable to create KeyedHashAlgorithm for algorithm 'HS256', the key size must be greater than: '256' bits, key has '240' bits. (Parameter 'keyBytes')
+System.ArgumentOutOfRangeException: IDX10720: Unable to create KeyedHashAlgorithm for algorithm 'HS256', the key size must be greater than: '256' bits, key has '240' bits. (Parameter 'keyBytes')
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.ValidateKeySize(Byte[] keyBytes, String algorithm, Int32 expectedNumberOfBytes)
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.CreateKeyedHashAlgorithm(Byte[] keyBytes, String algorithm)
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider.CreateKeyedHashAlgorithm()
+   at Microsoft.IdentityModel.Tokens.DisposableObjectPool`1.CreateInstance()
+   at Microsoft.IdentityModel.Tokens.DisposableObjectPool`1.Allocate()
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider.GetKeyedHashAlgorithm(Byte[] keyBytes, String algorithm)
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider.Sign(Byte[] input)
+   at Microsoft.IdentityModel.JsonWebTokens.JwtTokenUtilities.CreateEncodedSignature(String input, SigningCredentials signingCredentials)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.WriteToken(SecurityToken token)
+   at WMS.Infrastructure.Services.JwtTokenService.GenerateAccessToken(UserLogin user) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Infrastructure\Services\JwtTokenService.cs:line 47
+   at WMS.Application.Features.Auth.Commands.LoginCommandHandler.Handle(LoginCommand request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Auth\Commands\LoginCommandHandler.cs:line 35
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 34
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.AuthController.Login(LoginCommand command, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\AuthController.cs:line 28
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at WMS.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Middleware\GlobalExceptionMiddleware.cs:line 26
+2026-06-11 20:20:03.402 +05:30 [INF] WMS Request: LoginCommand {"Username":"admin","Password":"Admin@123","$type":"LoginCommand"}
+2026-06-11 20:20:03.797 +05:30 [ERR] HTTP POST /api/v1/Auth/login responded 500 in 396.5589 ms
+System.ArgumentOutOfRangeException: IDX10720: Unable to create KeyedHashAlgorithm for algorithm 'HS256', the key size must be greater than: '256' bits, key has '240' bits. (Parameter 'keyBytes')
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.ValidateKeySize(Byte[] keyBytes, String algorithm, Int32 expectedNumberOfBytes)
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.CreateKeyedHashAlgorithm(Byte[] keyBytes, String algorithm)
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider.CreateKeyedHashAlgorithm()
+   at Microsoft.IdentityModel.Tokens.DisposableObjectPool`1.CreateInstance()
+   at Microsoft.IdentityModel.Tokens.DisposableObjectPool`1.Allocate()
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider.GetKeyedHashAlgorithm(Byte[] keyBytes, String algorithm)
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider.Sign(Byte[] input)
+   at Microsoft.IdentityModel.JsonWebTokens.JwtTokenUtilities.CreateEncodedSignature(String input, SigningCredentials signingCredentials)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.WriteToken(SecurityToken token)
+   at WMS.Infrastructure.Services.JwtTokenService.GenerateAccessToken(UserLogin user) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Infrastructure\Services\JwtTokenService.cs:line 47
+   at WMS.Application.Features.Auth.Commands.LoginCommandHandler.Handle(LoginCommand request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Auth\Commands\LoginCommandHandler.cs:line 35
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 34
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.AuthController.Login(LoginCommand command, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\AuthController.cs:line 28
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-11 20:20:03.818 +05:30 [ERR] An unhandled exception occurred: IDX10720: Unable to create KeyedHashAlgorithm for algorithm 'HS256', the key size must be greater than: '256' bits, key has '240' bits. (Parameter 'keyBytes')
+System.ArgumentOutOfRangeException: IDX10720: Unable to create KeyedHashAlgorithm for algorithm 'HS256', the key size must be greater than: '256' bits, key has '240' bits. (Parameter 'keyBytes')
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.ValidateKeySize(Byte[] keyBytes, String algorithm, Int32 expectedNumberOfBytes)
+   at Microsoft.IdentityModel.Tokens.CryptoProviderFactory.CreateKeyedHashAlgorithm(Byte[] keyBytes, String algorithm)
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider.CreateKeyedHashAlgorithm()
+   at Microsoft.IdentityModel.Tokens.DisposableObjectPool`1.CreateInstance()
+   at Microsoft.IdentityModel.Tokens.DisposableObjectPool`1.Allocate()
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider.GetKeyedHashAlgorithm(Byte[] keyBytes, String algorithm)
+   at Microsoft.IdentityModel.Tokens.SymmetricSignatureProvider.Sign(Byte[] input)
+   at Microsoft.IdentityModel.JsonWebTokens.JwtTokenUtilities.CreateEncodedSignature(String input, SigningCredentials signingCredentials)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.WriteToken(SecurityToken token)
+   at WMS.Infrastructure.Services.JwtTokenService.GenerateAccessToken(UserLogin user) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Infrastructure\Services\JwtTokenService.cs:line 47
+   at WMS.Application.Features.Auth.Commands.LoginCommandHandler.Handle(LoginCommand request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Auth\Commands\LoginCommandHandler.cs:line 35
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 34
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.AuthController.Login(LoginCommand command, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\AuthController.cs:line 28
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at WMS.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Middleware\GlobalExceptionMiddleware.cs:line 26
+2026-06-11 20:21:25.525 +05:30 [WRN] As of ""2026-06-11T14:51:21.8377775+00:00"", the heartbeat has been running for ""00:00:02.1888246"" which is longer than ""00:00:01"". This could be caused by thread pool starvation.
+2026-06-11 20:25:02.168 +05:30 [WRN] Failed to determine the https port for redirect.
+2026-06-11 20:25:02.425 +05:30 [INF] WMS Request: LoginCommand {"Username":"admin","Password":"Admin@123","$type":"LoginCommand"}
+2026-06-11 20:25:04.329 +05:30 [WRN] WMS Long Running Request: LoginCommand (1863ms) {"Username":"admin","Password":"Admin@123","$type":"LoginCommand"}
+2026-06-11 20:25:04.340 +05:30 [INF] WMS Response: LoginCommand {"AccessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwidW5pcXVlX25hbWUiOiJhZG1pbiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IkFkbWluIiwiZW1wbG95ZWVJZCI6IiIsImp0aSI6IjI0NTlhNmQwLTU4OWQtNGZiMi04YWQ2LTg1MzhmNDYwMDNhOSIsImV4cCI6MTc4MTE5MzMwMywiaXNzIjoiV01TLkFQSSIsImF1ZCI6IldNUy5DbGllbnQifQ.Cy1VlsmWJjxoeMPG0Yrl9mhnNu-DOA4M3Cm45uE-0bc","RefreshToken":"W+il6AAG+8i2pD27U1hBoiMLVhus1JEu+Q4lwgi4s4n86+u65d4f+MskAHrPYarxyYueo+lA3Hj6UMOx/w1uXg==","ExpiresAt":"2026-06-11T15:55:04.3273328Z","Username":"admin","Role":"Admin","EmployeeId":null,"$type":"LoginResponse"}
+2026-06-11 20:25:04.412 +05:30 [INF] HTTP POST /api/v1/Auth/login responded 200 in 2151.2568 ms
+2026-06-11 20:27:25.898 +05:30 [WRN] As of ""2026-06-11T14:57:25.8143899+00:00"", the heartbeat has been running for ""00:00:10.1916787"" which is longer than ""00:00:01"". This could be caused by thread pool starvation.
+2026-06-11 20:29:20.974 +05:30 [INF] WMS Request: GetEmployeesQuery {"Search":null,"DepartmentId":null,"RoleId":null,"Status":null,"PageNumber":1,"PageSize":10,"$type":"GetEmployeesQuery"}
+2026-06-11 20:29:22.528 +05:30 [WRN] WMS Long Running Request: GetEmployeesQuery (1514ms) {"Search":null,"DepartmentId":null,"RoleId":null,"Status":null,"PageNumber":1,"PageSize":10,"$type":"GetEmployeesQuery"}
+2026-06-11 20:29:22.550 +05:30 [INF] WMS Response: GetEmployeesQuery {"Items":[],"TotalCount":0,"PageNumber":1,"PageSize":10,"TotalPages":0,"HasPreviousPage":false,"HasNextPage":false,"$type":"PagedResult`1"}
+2026-06-11 20:29:22.646 +05:30 [INF] HTTP GET /api/v1/Employees responded 200 in 2337.0652 ms
+2026-06-11 20:29:42.952 +05:30 [INF] WMS Request: GetDepartmentsQuery {"$type":"GetDepartmentsQuery"}
+2026-06-11 20:29:42.977 +05:30 [ERR] HTTP GET /api/v1/Departments responded 500 in 75.6332 ms
+System.InvalidOperationException: No service for type 'MediatR.IRequestHandler`2[WMS.Application.Features.Departments.Queries.GetDepartmentsQuery,System.Collections.Generic.IReadOnlyList`1[WMS.Application.Features.Departments.DTOs.DepartmentDto]]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.DepartmentsController.GetAll(CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\DepartmentsController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-11 20:29:43.084 +05:30 [ERR] An unhandled exception occurred: No service for type 'MediatR.IRequestHandler`2[WMS.Application.Features.Departments.Queries.GetDepartmentsQuery,System.Collections.Generic.IReadOnlyList`1[WMS.Application.Features.Departments.DTOs.DepartmentDto]]' has been registered.
+System.InvalidOperationException: No service for type 'MediatR.IRequestHandler`2[WMS.Application.Features.Departments.Queries.GetDepartmentsQuery,System.Collections.Generic.IReadOnlyList`1[WMS.Application.Features.Departments.DTOs.DepartmentDto]]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.DepartmentsController.GetAll(CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\DepartmentsController.cs:line 25
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at WMS.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Middleware\GlobalExceptionMiddleware.cs:line 26
+2026-06-11 20:30:36.970 +05:30 [INF] WMS Request: GetClientsQuery {"Search":null,"PageNumber":1,"PageSize":10,"$type":"GetClientsQuery"}
+2026-06-11 20:30:36.990 +05:30 [ERR] HTTP GET /api/v1/Clients responded 500 in 128.5064 ms
+System.InvalidOperationException: No service for type 'MediatR.IRequestHandler`2[WMS.Application.Features.Clients.Queries.GetClientsQuery,WMS.Domain.Common.PagedResult`1[WMS.Application.Features.Clients.DTOs.ClientDto]]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.ClientsController.GetAll(String search, Int32 pageNumber, Int32 pageSize, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\ClientsController.cs:line 29
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-11 20:30:37.014 +05:30 [ERR] An unhandled exception occurred: No service for type 'MediatR.IRequestHandler`2[WMS.Application.Features.Clients.Queries.GetClientsQuery,WMS.Domain.Common.PagedResult`1[WMS.Application.Features.Clients.DTOs.ClientDto]]' has been registered.
+System.InvalidOperationException: No service for type 'MediatR.IRequestHandler`2[WMS.Application.Features.Clients.Queries.GetClientsQuery,WMS.Domain.Common.PagedResult`1[WMS.Application.Features.Clients.DTOs.ClientDto]]' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService[T](IServiceProvider provider)
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_0.<Handle>g__Handler|0()
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.ClientsController.GetAll(String search, Int32 pageNumber, Int32 pageSize, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\ClientsController.cs:line 29
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at WMS.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Middleware\GlobalExceptionMiddleware.cs:line 26
+2026-06-11 20:32:47.996 +05:30 [INF] WMS Request: CreateDepartmentCommand {"Dto":{"DepartmentName":"IT","Description":"Information Technology","$type":"CreateDepartmentDto"},"$type":"CreateDepartmentCommand"}
+2026-06-11 20:32:48.902 +05:30 [ERR] HTTP POST /api/v1/Departments responded 500 in 1161.7190 ms
+WMS.Application.Common.Exceptions.ConflictException: Department 'IT' already exists.
+   at WMS.Application.Features.Departments.Commands.CreateDepartmentCommandHandler.Handle(CreateDepartmentCommand request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Departments\Commands\CreateDepartmentCommand.cs:line 24
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.DepartmentsController.Create(CreateDepartmentDto dto, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\DepartmentsController.cs:line 40
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-06-11 20:32:48.928 +05:30 [ERR] An unhandled exception occurred: Department 'IT' already exists.
+WMS.Application.Common.Exceptions.ConflictException: Department 'IT' already exists.
+   at WMS.Application.Features.Departments.Commands.CreateDepartmentCommandHandler.Handle(CreateDepartmentCommand request, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Features\Departments\Commands\CreateDepartmentCommand.cs:line 24
+   at WMS.Application.Common.Behaviours.PerformanceBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\PerformanceBehaviour.cs:line 22
+   at WMS.Application.Common.Behaviours.ValidationBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\ValidationBehaviour.cs:line 20
+   at WMS.Application.Common.Behaviours.LoggingBehaviour`2.Handle(TRequest request, RequestHandlerDelegate`1 next, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\Common\Behaviours\LoggingBehaviour.cs:line 22
+   at WMS.API.Controllers.v1.DepartmentsController.Create(CreateDepartmentDto dto, CancellationToken ct) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Controllers\v1\DepartmentsController.cs:line 40
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at WMS.API.Middleware.GlobalExceptionMiddleware.InvokeAsync(HttpContext context) in C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.API\Middleware\GlobalExceptionMiddleware.cs:line 26
+2026-06-11 20:33:13.580 +05:30 [INF] WMS Request: CreateDepartmentCommand {"Dto":{"DepartmentName":"AI-DS","Description":"artificial intelligence and data science","$type":"CreateDepartmentDto"},"$type":"CreateDepartmentCommand"}
+2026-06-11 20:33:13.878 +05:30 [INF] WMS Response: CreateDepartmentCommand {"DepartmentId":5,"DepartmentName":"AI-DS","Description":"artificial intelligence and data science","EmployeeCount":0,"CreatedOn":"2026-06-11T15:03:13.6443056Z","$type":"DepartmentDto"}
+2026-06-11 20:33:13.990 +05:30 [INF] HTTP POST /api/v1/Departments responded 201 in 414.9612 ms
+2026-06-11 20:33:58.573 +05:30 [INF] WMS Request: CreateEmployeeCommand {"Dto":{"FirstName":"Hardik","LastName":"Patel","Email":"hardik@test.com","PhoneNumber":"9999999999","Gender":"Male","DOB":"1998-01-01T00:00:00.0000000Z","DOJ":"2026-06-11T00:00:00.0000000Z","DepartmentId":1,"RoleId":1,"Username":"hardik","Password":"Admin@123","$type":"CreateEmployeeDto"},"$type":"CreateEmployeeCommand"}
+2026-06-11 20:33:59.788 +05:30 [WRN] WMS Long Running Request: CreateEmployeeCommand (1166ms) {"Dto":{"FirstName":"Hardik","LastName":"Patel","Email":"hardik@test.com","PhoneNumber":"9999999999","Gender":"Male","DOB":"1998-01-01T00:00:00.0000000Z","DOJ":"2026-06-11T00:00:00.0000000Z","DepartmentId":1,"RoleId":1,"Username":"hardik","Password":"Admin@123","$type":"CreateEmployeeDto"},"$type":"CreateEmployeeCommand"}
+2026-06-11 20:33:59.802 +05:30 [INF] WMS Response: CreateEmployeeCommand {"EmployeeId":1,"FirstName":"Hardik","LastName":"Patel","FullName":"Hardik Patel","Email":"hardik@test.com","PhoneNumber":"9999999999","Gender":"Male","DOB":"1998-01-01T00:00:00.0000000Z","DOJ":"2026-06-11T00:00:00.0000000Z","DepartmentId":1,"DepartmentName":"HR","RoleId":1,"RoleName":"Admin","Status":"Active","CreatedOn":"2026-06-11T15:03:58.6936554Z","UpdatedOn":null,"$type":"EmployeeDto"}
+2026-06-11 20:33:59.826 +05:30 [INF] HTTP POST /api/v1/Employees responded 201 in 1378.4810 ms

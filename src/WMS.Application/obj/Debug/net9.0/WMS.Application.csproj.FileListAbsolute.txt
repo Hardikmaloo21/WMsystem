@@ -1,0 +1,16 @@
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\bin\Debug\net9.0\WMS.Application.deps.json
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\bin\Debug\net9.0\WMS.Application.dll
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\bin\Debug\net9.0\WMS.Application.pdb
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\bin\Debug\net9.0\WMS.Domain.dll
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\bin\Debug\net9.0\WMS.Domain.pdb
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\obj\Debug\net9.0\WMS.Application.csproj.AssemblyReference.cache
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\obj\Debug\net9.0\WMS.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\obj\Debug\net9.0\WMS.Application.AssemblyInfoInputs.cache
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\obj\Debug\net9.0\WMS.Application.AssemblyInfo.cs
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\obj\Debug\net9.0\WMS.Application.csproj.CoreCompileInputs.cache
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\obj\Debug\net9.0\WMS.Application.sourcelink.json
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\obj\Debug\net9.0\WMS.Appl.21886158.Up2Date
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\obj\Debug\net9.0\WMS.Application.dll
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\obj\Debug\net9.0\refint\WMS.Application.dll
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\obj\Debug\net9.0\WMS.Application.pdb
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Application\obj\Debug\net9.0\ref\WMS.Application.dll

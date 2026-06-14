@@ -1,0 +1,54 @@
+<h2>Assign Employee</h2>
+
+<form [formGroup]="form" (ngSubmit)="save()">
+
+  <div>
+    <label>Employee</label>
+
+    <select formControlName="empId">
+      <option [ngValue]="null">
+        Select Employee
+      </option>
+
+      <option
+        *ngFor="let e of employees"
+        [value]="e.employeeId">
+
+        {{e.firstName}}
+        {{e.lastName}}
+
+      </option>
+    </select>
+  </div>
+
+  <div>
+    <label>Project</label>
+
+    <select formControlName="projectId">
+      <option [ngValue]="null">
+        Select Project
+      </option>
+
+      <option
+        *ngFor="let p of projects"
+        [value]="p.projectId">
+
+        {{p.projectName}}
+
+      </option>
+    </select>
+  </div>
+
+  <div>
+    <label>Assigned Date</label>
+
+    <input
+      type="date"
+      formControlName="assignedOn">
+  </div>
+
+  <button type="submit">
+    Save
+  </button>
+
+</form>

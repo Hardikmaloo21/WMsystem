@@ -1,0 +1,27 @@
+.attendance-card{
+  display:flex;
+  gap:16px;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.actions{
+  display:flex;
+  gap:10px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th,
+td{
+  padding:10px;
+  border-bottom:1px solid #ddd;
+  text-align:left;
+}
+
+button{
+  cursor:pointer;
+}

@@ -1,0 +1,82 @@
+<h1>My Attendance</h1>
+
+<div class="attendance-card">
+
+  <label>
+    Work Mode
+  </label>
+
+  <select [(ngModel)]="workMode">
+
+    <option value="WFO">
+      Work From Office
+    </option>
+
+    <option value="WFH">
+      Work From Home
+    </option>
+
+  </select>
+
+  <div class="actions">
+
+    <button
+      (click)="checkIn()">
+
+      Check In
+
+    </button>
+
+    <button
+      (click)="checkOut()">
+
+      Check Out
+
+    </button>
+
+  </div>
+
+</div>
+
+<hr>
+
+<h2>Current Month Attendance</h2>
+
+<table>
+
+  <thead>
+    <tr>
+
+      <th>Date</th>
+      <th>Check In</th>
+      <th>Check Out</th>
+      <th>Work Mode</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr *ngFor="let r of records()">
+
+      <td>
+        {{ r.attendanceDate | date:'dd-MM-yyyy' }}
+      </td>
+
+      <td>
+  {{ r.checkIn | date:'hh:mm:ss a' }}
+</td>
+
+<td>
+  {{ r.checkOut | date:'hh:mm:ss a' }}
+</td>
+
+      <td>
+        {{ r.workMode }}
+      </td>
+
+    </tr>
+
+  </tbody>
+
+</table>

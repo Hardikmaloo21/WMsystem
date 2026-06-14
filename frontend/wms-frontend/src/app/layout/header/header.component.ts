@@ -1,0 +1,5 @@
+﻿import { Component } from '@angular/core';
+
+@Component({ selector: 'app-header', standalone: true, template: '<p>header works</p>' })
+export class HeaderComponent {}
+

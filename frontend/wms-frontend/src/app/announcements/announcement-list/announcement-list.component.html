@@ -1,0 +1,63 @@
+<h2>Announcements</h2>
+
+<p>
+  <a routerLink="/announcements/add">
+    Add Announcement
+  </a>
+</p>
+
+<table>
+
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Created By</th>
+      <th>Created On</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr *ngFor="let a of announcements">
+
+      <td>{{a.title}}</td>
+
+      <td>{{a.createdByName}}</td>
+
+      <td>
+        {{a.createdOn | date:'dd-MM-yyyy'}}
+      </td>
+
+      <td>
+        {{a.isActive ? 'Active' : 'Inactive'}}
+      </td>
+
+      <td>
+
+        <button
+          [routerLink]="[
+            '/announcements/edit',
+            a.announcementId
+          ]">
+          Edit
+        </button>
+
+        <button
+          (click)="toggle(a.announcementId)">
+          Toggle
+        </button>
+
+        <button
+          (click)="delete(a.announcementId)">
+          Delete
+        </button>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+
+</table>

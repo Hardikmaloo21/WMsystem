@@ -1,0 +1,12 @@
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Domain\bin\Debug\net9.0\WMS.Domain.deps.json
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Domain\bin\Debug\net9.0\WMS.Domain.dll
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Domain\bin\Debug\net9.0\WMS.Domain.pdb
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Domain\obj\Debug\net9.0\WMS.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Domain\obj\Debug\net9.0\WMS.Domain.AssemblyInfoInputs.cache
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Domain\obj\Debug\net9.0\WMS.Domain.AssemblyInfo.cs
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Domain\obj\Debug\net9.0\WMS.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Domain\obj\Debug\net9.0\WMS.Domain.sourcelink.json
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Domain\obj\Debug\net9.0\WMS.Domain.dll
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Domain\obj\Debug\net9.0\refint\WMS.Domain.dll
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Domain\obj\Debug\net9.0\WMS.Domain.pdb
+C:\Users\Hardik\Desktop\WMS-Solution\src\WMS.Domain\obj\Debug\net9.0\ref\WMS.Domain.dll

@@ -1,0 +1,17 @@
+.full-width-table {
+  width: 100%;
+}
+
+.full-width-table th {
+  font-weight: 600;
+}
+
+.full-width-table td,
+.full-width-table th {
+  padding: 12px;
+}
+
+.table-actions {
+  display: flex;
+  gap: 8px;
+}
