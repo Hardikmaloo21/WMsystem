@@ -1,193 +1,183 @@
 trigger:
-branches:
-include:
-- dev
-- main
-- feature/*
+  branches:
+    include:
+      - dev
+      - main
+      - feature/*
 
 pr:
-branches:
-include:
-- dev
-- main
+  branches:
+    include:
+      - dev
+      - main
 
 variables:
-buildConfiguration: 'Release'
-dotnetVersion: '8.x'
-nodeVersion: '20.x'
+  buildConfiguration: 'Release'
+  dotnetVersion: '9.x'
+  nodeVersion: '20.x'
 
 stages:
 
 # =====================================================
-
 # Stage 1 - Build Backend + Unit Tests
-
 # =====================================================
 
-* stage: BuildBackend
+- stage: BuildBackend
   displayName: 'Build Backend'
 
   jobs:
 
-  * job: BuildAPI
+  - job: BuildAPI
     displayName: 'Restore → Build → Test → Publish API'
 
     pool:
-    vmImage: 'windows-latest'
+      vmImage: 'windows-latest'
 
     steps:
 
-    * task: UseDotNet@2
-      displayName: 'Install .NET 8 SDK'
+    - task: UseDotNet@2
+      displayName: 'Install .NET SDK'
       inputs:
-      version: $(dotnetVersion)
+        packageType: 'sdk'
+        version: '$(dotnetVersion)'
 
-    * task: DotNetCoreCLI@2
+    - task: DotNetCoreCLI@2
       displayName: 'Restore Packages'
       inputs:
-      command: restore
-      projects: '**/*.sln'
+        command: 'restore'
+        projects: '**/*.sln'
 
-    * task: DotNetCoreCLI@2
+    - task: DotNetCoreCLI@2
       displayName: 'Build Solution'
       inputs:
-      command: build
-      projects: '**/*.sln'
-      arguments: '--configuration $(buildConfiguration) --no-restore'
+        command: 'build'
+        projects: '**/*.sln'
+        arguments: '--configuration $(buildConfiguration) --no-restore'
 
-    * task: DotNetCoreCLI@2
+    - task: DotNetCoreCLI@2
       displayName: 'Run Unit Tests'
       inputs:
-      command: test
-      projects: 'tests/WMS.UnitTests/WMS.UnitTests.csproj'
-      arguments: '--configuration $(buildConfiguration) --collect:"XPlat Code Coverage" --logger trx'
-      publishTestResults: true
+        command: 'test'
+        projects: 'tests/WMS.UnitTests/WMS.UnitTests.csproj'
+        arguments: '--configuration $(buildConfiguration) --collect:"XPlat Code Coverage" --logger trx'
+        publishTestResults: true
 
-    * task: DotNetCoreCLI@2
+    - task: DotNetCoreCLI@2
       displayName: 'Publish API'
       inputs:
-      command: publish
-      publishWebProjects: false
-      projects: 'src/WMS.API/WMS.API.csproj'
-      arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/api'
+        command: 'publish'
+        publishWebProjects: false
+        projects: 'src/WMS.API/WMS.API.csproj'
+        arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/api'
 
-    * task: PublishBuildArtifacts@1
+    - task: PublishBuildArtifacts@1
       displayName: 'Publish API Artifact'
       inputs:
-      PathtoPublish: '$(Build.ArtifactStagingDirectory)/api'
-      ArtifactName: 'wms-api'
-      publishLocation: 'Container'
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)/api'
+        ArtifactName: 'wms-api'
+        publishLocation: 'Container'
 
 # =====================================================
-
 # Stage 2 - Build Angular Frontend
-
 # =====================================================
 
-* stage: BuildFrontend
+- stage: BuildFrontend
   displayName: 'Build Frontend'
 
   jobs:
 
-  * job: AngularBuild
+  - job: AngularBuild
+    displayName: 'Build Angular Application'
 
     pool:
-    vmImage: 'ubuntu-latest'
+      vmImage: 'ubuntu-latest'
 
     steps:
 
-    * task: NodeTool@0
+    - task: NodeTool@0
       displayName: 'Install Node.js'
       inputs:
-      versionSpec: $(nodeVersion)
+        versionSpec: '$(nodeVersion)'
 
-    * script: |
-      cd frontend/wms-frontend
-      npm install --legacy-peer-deps --no-audit --no-fund
+    - script: |
+        cd frontend/wms-frontend
+        npm install --legacy-peer-deps --no-audit --no-fund
       displayName: 'Install Dependencies'
 
-    * script: |
-      cd frontend/wms-frontend
-      export NODE_OPTIONS=--max-old-space-size=2048
-      npx ng build --configuration production
+    - script: |
+        cd frontend/wms-frontend
+        export NODE_OPTIONS=--max-old-space-size=2048
+        npx ng build --configuration production
       displayName: 'Build Angular App'
 
-    * task: PublishBuildArtifacts@1
+    - task: PublishBuildArtifacts@1
       displayName: 'Publish Frontend Artifact'
       inputs:
-      PathtoPublish: 'frontend/wms-frontend/dist'
-      ArtifactName: 'wms-frontend'
-      publishLocation: 'Container'
+        PathtoPublish: 'frontend/wms-frontend/dist'
+        ArtifactName: 'wms-frontend'
+        publishLocation: 'Container'
 
 # =====================================================
-
-# Stage 3 - Publish Code Coverage
-
+# Stage 3 - Code Coverage
 # =====================================================
 
-* stage: CodeCoverage
+- stage: CodeCoverage
   displayName: 'Code Coverage'
-
-  dependsOn:
-
-  * BuildBackend
+  dependsOn: BuildBackend
 
   jobs:
 
-  * job: Coverage
+  - job: Coverage
 
     pool:
-    vmImage: 'windows-latest'
+      vmImage: 'windows-latest'
 
     steps:
 
-    * task: PublishCodeCoverageResults@1
+    - task: PublishCodeCoverageResults@1
       displayName: 'Publish Coverage Report'
-      inputs:
-      codeCoverageTool: 'Cobertura'
-      summaryFileLocation: '$(Agent.TempDirectory)/**/coverage.cobertura.xml'
       condition: succeededOrFailed()
+      inputs:
+        codeCoverageTool: 'Cobertura'
+        summaryFileLocation: '$(Agent.TempDirectory)/**/coverage.cobertura.xml'
 
 # =====================================================
-
-# Stage 4 - Deployment Approval
-
+# Stage 4 - Deployment Approval Summary
 # =====================================================
 
-* stage: DeploymentApproval
+- stage: DeploymentApproval
   displayName: 'Deployment Ready'
 
   dependsOn:
-
-  * BuildBackend
-  * BuildFrontend
-  * CodeCoverage
+    - BuildBackend
+    - BuildFrontend
+    - CodeCoverage
 
   condition: succeeded()
 
   jobs:
 
-  * job: Summary
+  - job: Summary
 
     pool:
-    vmImage: 'ubuntu-latest'
+      vmImage: 'ubuntu-latest'
 
     steps:
 
-    * script: |
-      echo "====================================="
-      echo "WMS PIPELINE EXECUTED SUCCESSFULLY"
-      echo "====================================="
-      echo "Backend Build     : SUCCESS"
-      echo "Frontend Build    : SUCCESS"
-      echo "Unit Tests        : SUCCESS"
-      echo "Artifacts         : PUBLISHED"
-      echo ""
-      echo "Branch            : $(Build.SourceBranchName)"
-      echo "Build ID          : $(Build.BuildId)"
-      echo ""
-      echo "Next Step:"
-      echo "DEV  -> Deploy to DEV Environment"
-      echo "MAIN -> Deploy to PROD Environment"
-      echo "====================================="
+    - script: |
+        echo "====================================="
+        echo "WMS PIPELINE EXECUTED SUCCESSFULLY"
+        echo "====================================="
+        echo "Backend Build     : SUCCESS"
+        echo "Frontend Build    : SUCCESS"
+        echo "Unit Tests        : SUCCESS"
+        echo "Artifacts         : PUBLISHED"
+        echo ""
+        echo "Branch            : $(Build.SourceBranchName)"
+        echo "Build ID          : $(Build.BuildId)"
+        echo ""
+        echo "Next Step:"
+        echo "DEV  -> Deploy to DEV Environment"
+        echo "MAIN -> Deploy to PROD Environment"
+        echo "====================================="
       displayName: 'Pipeline Summary'
