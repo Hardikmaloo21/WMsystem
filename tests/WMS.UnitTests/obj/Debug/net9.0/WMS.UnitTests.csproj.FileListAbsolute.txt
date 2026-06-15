@@ -165,3 +165,6 @@ C:\Users\Hardik\Desktop\WMS-Solution\tests\WMS.UnitTests\obj\Debug\net9.0\refint
 C:\Users\Hardik\Desktop\WMS-Solution\tests\WMS.UnitTests\obj\Debug\net9.0\WMS.UnitTests.pdb
 C:\Users\Hardik\Desktop\WMS-Solution\tests\WMS.UnitTests\obj\Debug\net9.0\WMS.UnitTests.genruntimeconfig.cache
 C:\Users\Hardik\Desktop\WMS-Solution\tests\WMS.UnitTests\obj\Debug\net9.0\ref\WMS.UnitTests.dll
+C:\Users\Hardik\Desktop\WMS-Solution\tests\WMS.UnitTests\bin\Debug\net9.0\MockQueryable.Core.dll
+C:\Users\Hardik\Desktop\WMS-Solution\tests\WMS.UnitTests\bin\Debug\net9.0\MockQueryable.EntityFrameworkCore.dll
+C:\Users\Hardik\Desktop\WMS-Solution\tests\WMS.UnitTests\bin\Debug\net9.0\MockQueryable.Moq.dll
