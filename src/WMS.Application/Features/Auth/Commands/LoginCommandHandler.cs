@@ -23,32 +23,33 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand, LoginResponse>
     }
 
     public async Task<LoginResponse> Handle(LoginCommand request, CancellationToken ct)
-    {
-        var user = await _uow.UserLogins.Query()
-            .Include(u => u.Role)
-            .FirstOrDefaultAsync(u => u.Username == request.Username, ct)
-            ?? throw new UnauthorizedException("Invalid username or password.");
+{
+    var user = _uow.UserLogins.Query()
+        .Include(u => u.Role)
+        .FirstOrDefault(u => u.Username == request.Username)
+        ?? throw new UnauthorizedException("Invalid username or password.");
 
-        if (!BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
-            throw new UnauthorizedException("Invalid username or password.");
+    if (!BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
+        throw new UnauthorizedException("Invalid username or password.");
 
-        var accessToken = _jwtService.GenerateAccessToken(user);
-        var refreshToken = _jwtService.GenerateRefreshToken();
-        var expiry = DateTime.UtcNow.AddDays(_jwtSettings.RefreshTokenExpiryDays);
+    var accessToken = _jwtService.GenerateAccessToken(user);
+    var refreshToken = _jwtService.GenerateRefreshToken();
+    var expiry = DateTime.UtcNow.AddDays(_jwtSettings.RefreshTokenExpiryDays);
 
-        user.RefreshToken = refreshToken;
-        user.RefreshTokenExpiry = expiry;
-        user.LastLogin = DateTime.UtcNow;
-        await _uow.UserLogins.UpdateAsync(user, ct);
-        await _uow.SaveChangesAsync(ct);
+    user.RefreshToken = refreshToken;
+    user.RefreshTokenExpiry = expiry;
+    user.LastLogin = DateTime.UtcNow;
 
-        return new LoginResponse(
-            AccessToken: accessToken,
-            RefreshToken: refreshToken,
-            ExpiresAt: DateTime.UtcNow.AddMinutes(_jwtSettings.AccessTokenExpiryMinutes),
-            Username: user.Username,
-            Role: user.Role!.RoleName,
-            EmployeeId: user.EmployeeId
-        );
-    }
+    await _uow.UserLogins.UpdateAsync(user, ct);
+    await _uow.SaveChangesAsync(ct);
+
+    return new LoginResponse(
+        AccessToken: accessToken,
+        RefreshToken: refreshToken,
+        ExpiresAt: DateTime.UtcNow.AddMinutes(_jwtSettings.AccessTokenExpiryMinutes),
+        Username: user.Username,
+        Role: user.Role!.RoleName,
+        EmployeeId: user.EmployeeId
+    );
+}
 }
