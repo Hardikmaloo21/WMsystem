@@ -11,6 +11,7 @@ using WMS.Infrastructure.Services;
 using WMS.Application.Common.Interfaces;
 using WMS.Application.Common.Settings;
 using Xunit;
+using MockQueryable.Moq;
 
 namespace WMS.UnitTests.Features.Auth;
 
@@ -45,7 +46,12 @@ public class LoginCommandHandlerTests
         };
 
         var mockRepo = new Mock<IGenericRepository<UserLogin>>();
-        mockRepo.Setup(r => r.Query()).Returns(new[] { user }.AsQueryable());
+        var users = new List<UserLogin> { user };
+
+var mockQueryable = users.AsQueryable().BuildMock();
+
+mockRepo.Setup(r => r.Query())
+        .Returns(mockQueryable);
         _uowMock.Setup(u => u.UserLogins).Returns(mockRepo.Object);
         _uowMock.Setup(u => u.SaveChangesAsync(It.IsAny<CancellationToken>())).ReturnsAsync(1);
         _jwtMock.Setup(j => j.GenerateAccessToken(user)).Returns("access_token");
@@ -74,7 +80,12 @@ public class LoginCommandHandlerTests
         };
 
         var mockRepo = new Mock<IGenericRepository<UserLogin>>();
-        mockRepo.Setup(r => r.Query()).Returns(new[] { user }.AsQueryable());
+        var users = new List<UserLogin>();
+
+var mockQueryable = users.AsQueryable().BuildMock();
+
+mockRepo.Setup(r => r.Query())
+        .Returns(mockQueryable);
         _uowMock.Setup(u => u.UserLogins).Returns(mockRepo.Object);
 
         var handler = CreateHandler();
@@ -88,14 +99,24 @@ public class LoginCommandHandlerTests
     public async Task Handle_NonExistentUser_ThrowsUnauthorizedException()
     {
         // Arrange
-        var mockRepo = new Mock<IGenericRepository<UserLogin>>();
-        mockRepo.Setup(r => r.Query()).Returns(Enumerable.Empty<UserLogin>().AsQueryable());
-        _uowMock.Setup(u => u.UserLogins).Returns(mockRepo.Object);
+   var mockRepo = new Mock<IGenericRepository<UserLogin>>();
 
-        var handler = CreateHandler();
+    var users = new List<UserLogin>();
 
-        // Act & Assert
-        await Assert.ThrowsAsync<UnauthorizedException>(
-            () => handler.Handle(new LoginCommand("nobody", "pass"), CancellationToken.None));
+    var mockQueryable = users.AsQueryable().BuildMock();
+
+    mockRepo.Setup(r => r.Query())
+            .Returns(mockQueryable);
+
+    _uowMock.Setup(u => u.UserLogins)
+            .Returns(mockRepo.Object);
+
+    var handler = CreateHandler();
+
+    // Act & Assert
+    await Assert.ThrowsAsync<UnauthorizedException>(
+        () => handler.Handle(
+            new LoginCommand("nobody", "pass"),
+            CancellationToken.None));
     }
 }
